@@ -1,6 +1,8 @@
 
 package proyectolabo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -32,7 +34,7 @@ public class eliminacion extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtusuario = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
@@ -67,7 +69,7 @@ public class eliminacion extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuariolog.png"))); // NOI18N
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 60, 50));
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 160, -1));
+        jPanel3.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 160, -1));
 
         jButton4.setText("Buscar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +111,14 @@ public class eliminacion extends javax.swing.JFrame {
         txtdui.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtduiActionPerformed(evt);
+            }
+        });
+        txtdui.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtduiKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtduiKeyTyped(evt);
             }
         });
         jPanel1.add(txtdui, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 85, -1));
@@ -177,12 +187,35 @@ public class eliminacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.buscarrg.setSelectedIndex(1);
+        if(txtusuario.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "usuario no ingresado");
+            txtusuario.requestFocus();
+        }else{
+            this.buscarrg.setSelectedIndex(1);
+        }
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtduiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyTyped
+        // TODO add your handling code here:
+        int limite = 8;
+        if (txtdui.getText().length() > limite) {
+            evt.consume();
+        }
+        char dato = evt.getKeyChar();
+        String cadena = "" + dato;
+        if (!cadena.matches("[0-9]")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtduiKeyTyped
+
+    private void txtduiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyPressed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_txtduiKeyPressed
  
     /**
      * @param args the command line arguments
@@ -242,8 +275,8 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextPane textpane;
     private javax.swing.JTextField txtdui;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
