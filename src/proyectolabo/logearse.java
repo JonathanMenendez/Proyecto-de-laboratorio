@@ -1,5 +1,6 @@
-
 package proyectolabo;
+
+import javax.swing.JOptionPane;
 
 public class logearse extends javax.swing.JFrame {
 
@@ -12,7 +13,7 @@ public class logearse extends javax.swing.JFrame {
         btngrupo.add(btnsi);
         btngrupo.add(btnninguna);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,7 +27,7 @@ public class logearse extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtusuario = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
@@ -49,8 +50,8 @@ public class logearse extends javax.swing.JFrame {
         jLabel4.setText("Registrarse como usuario");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 290, 40));
+        txtusuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 290, 40));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Registrarse");
@@ -87,12 +88,17 @@ public class logearse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       dueño nuevo=new dueño();
-       nuevo.setVisible(true);
+        if (txtusuario.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "usuario no ingresado");
+            txtusuario.requestFocus();
+        } else {
+            dueño nuevo = new dueño();
+            nuevo.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    this.dispose();        // TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -142,6 +148,6 @@ public class logearse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     public static javax.swing.JPasswordField jPasswordField1;
-    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -117,6 +117,7 @@ public class dueño extends javax.swing.JFrame {
         jLabel3.setText("DUI");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
+        txtdui.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtdui.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtduiActionPerformed(evt);
