@@ -153,7 +153,7 @@ public class dueño extends javax.swing.JFrame {
 
         cbxsexop.setBackground(new java.awt.Color(0, 102, 102));
         cbxsexop.setForeground(new java.awt.Color(255, 255, 255));
-        cbxsexop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        cbxsexop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione genero", "Masculino", "Femenio" }));
         jPanel1.add(cbxsexop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
@@ -192,11 +192,11 @@ public class dueño extends javax.swing.JFrame {
         cbxanimal.setBackground(new java.awt.Color(0, 153, 153));
         cbxanimal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cbxanimal.setForeground(new java.awt.Color(255, 255, 255));
-        cbxanimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perro", "Gato", "Hamster", "Ave", "Conejo", "Reptil" }));
+        cbxanimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione animal", "Perro", "Gato", "Hamster", "Ave", "Conejo", "Reptil" }));
         cbxanimal.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         cbxanimal.setEditor(null);
         cbxanimal.setFocusCycleRoot(true);
-        jPanel2.add(cbxanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 110, -1));
+        jPanel2.add(cbxanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 130, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,8 +283,8 @@ public class dueño extends javax.swing.JFrame {
         jComboBox3.setBackground(new java.awt.Color(0, 153, 153));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "hembra", "varon" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione sexo", "hembra", "varon" }));
+        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

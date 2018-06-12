@@ -219,6 +219,11 @@ public class buscar extends javax.swing.JFrame {
         jPanel2.add(txtraza, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 110, -1));
 
         btnguardar.setText("Guardar cambios");
+        btnguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnguardarActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
 
         btncacelar.setText("Cancelar");
@@ -288,33 +293,7 @@ public class buscar extends javax.swing.JFrame {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btncacelarActionPerformed
 
-    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-        if (txtnombre.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
-            txtnombre.requestFocus();
-        } else if (txtapellido.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
-            txtapellido.requestFocus();
-        } else if (txtdui.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
-            txtdui.requestFocus();
-        } else if (txtmascota.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
-            txtmascota.requestFocus();
-        } else if (txtraza.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Raza de la mascota no hacido ingresado");
-            txtraza.requestFocus();
-        } else if (txttamaño.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Tamaño de la mascota no hacido ingresado");
-            txttamaño.requestFocus();
-        } else if (txtpeso.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Peso de la mascota no hacido ingresado");
-            txtpeso.requestFocus();
-        } else {
-            JOptionPane.showMessageDialog(null, "guardado con exito");
-        }
-    }
+    
 
     private void txttamañoKeyTyped(java.awt.event.KeyEvent evt) {
         // TODO add your handling code here:
@@ -460,6 +439,33 @@ public class buscar extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+ if (txtnombre.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
+            txtnombre.requestFocus();
+        } else if (txtapellido.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
+            txtapellido.requestFocus();
+        } else if (txtdui.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
+            txtdui.requestFocus();
+        } else if (txtmascota.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
+            txtmascota.requestFocus();
+        } else if (txtraza.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Raza de la mascota no hacido ingresado");
+            txtraza.requestFocus();
+        } else if (txttamaño.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Tamaño de la mascota no hacido ingresado");
+            txttamaño.requestFocus();
+        } else if (txtpeso.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Peso de la mascota no hacido ingresado");
+            txtpeso.requestFocus();
+        } else {
+            JOptionPane.showMessageDialog(null, "guardado con exito");
+        }      
+    }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
      * @param args the command line arguments

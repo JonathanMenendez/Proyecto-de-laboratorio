@@ -196,9 +196,10 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Masculino"/>
-                    <StringItem index="1" value="Femenino"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="seleccione genero"/>
+                    <StringItem index="1" value="Masculino"/>
+                    <StringItem index="2" value="Femenio"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -314,13 +315,14 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
-                    <StringItem index="0" value="Perro"/>
-                    <StringItem index="1" value="Gato"/>
-                    <StringItem index="2" value="Hamster"/>
-                    <StringItem index="3" value="Ave"/>
-                    <StringItem index="4" value="Conejo"/>
-                    <StringItem index="5" value="Reptil"/>
+                  <StringArray count="7">
+                    <StringItem index="0" value="seleccione animal"/>
+                    <StringItem index="1" value="Perro"/>
+                    <StringItem index="2" value="Gato"/>
+                    <StringItem index="3" value="Hamster"/>
+                    <StringItem index="4" value="Ave"/>
+                    <StringItem index="5" value="Conejo"/>
+                    <StringItem index="6" value="Reptil"/>
                   </StringArray>
                 </Property>
                 <Property name="debugGraphicsOptions" type="int" value="-1"/>
@@ -334,7 +336,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="90" width="110" height="-1"/>
+                  <AbsoluteConstraints x="160" y="90" width="130" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -519,9 +521,10 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="hembra"/>
-                    <StringItem index="1" value="varon"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="seleccione sexo"/>
+                    <StringItem index="1" value="hembra"/>
+                    <StringItem index="2" value="varon"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -530,7 +533,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="340" y="90" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="330" y="90" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

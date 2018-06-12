@@ -28,7 +28,7 @@ public class logearse extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtusuario = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnregistrar = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -53,14 +53,14 @@ public class logearse extends javax.swing.JFrame {
         txtusuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         getContentPane().add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 290, 40));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Registrarse");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnregistrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnregistrar.setText("Registrarse");
+        btnregistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnregistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 100, 30));
+        getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 100, 30));
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 290, 40));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -76,9 +76,19 @@ public class logearse extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
 
         btnninguna.setText("Ninguna vez.");
+        btnninguna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnningunaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnninguna, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
 
         btnsi.setText("Si.");
+        btnsi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsiActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mascotasfondo.png"))); // NOI18N
@@ -87,7 +97,7 @@ public class logearse extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
         if (txtusuario.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "usuario no ingresado");
             txtusuario.requestFocus();
@@ -95,11 +105,19 @@ public class logearse extends javax.swing.JFrame {
             dueño nuevo = new dueño();
             nuevo.setVisible(true);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnregistrarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnningunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnningunaActionPerformed
+         
+    }//GEN-LAST:event_btnningunaActionPerformed
+
+    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsiActionPerformed
+     
+    }//GEN-LAST:event_btnsiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,8 +157,8 @@ public class logearse extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btngrupo;
     public static javax.swing.JRadioButton btnninguna;
+    private javax.swing.JButton btnregistrar;
     public static javax.swing.JRadioButton btnsi;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
