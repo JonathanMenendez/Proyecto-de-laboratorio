@@ -14,11 +14,7 @@ public class eliminacion extends javax.swing.JFrame {
      */ 
     public eliminacion() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        textpane.setText("Nota: Si no ha registrado con anterioridad no deberia\n" + 
-                "estar en esta pestaña, primero debe registrar\n" + 
-                " a su mascota,en ser ese el caso, debe presionar \"cancelar\".");
-       
+        this.setLocationRelativeTo(null);       
     }
 
     /**
@@ -30,16 +26,7 @@ public class eliminacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buscarrg = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        txtusuario = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        textpane = new javax.swing.JTextPane();
+        eliminar = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtdui = new javax.swing.JTextField();
@@ -51,55 +38,14 @@ public class eliminacion extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buscarrg.setEnabled(false);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarionewfondo.png"))); // NOI18N
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 50, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuariolog.png"))); // NOI18N
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 60, 50));
-        jPanel3.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 160, -1));
-
-        jButton4.setText("Buscar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
-
-        jButton5.setText("cancelar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
-        jPanel3.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 170, -1));
-
-        jScrollPane2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        textpane.setEditable(false);
-        textpane.setBackground(new java.awt.Color(204, 204, 255));
-        textpane.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        textpane.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        textpane.setEnabled(false);
-        jScrollPane2.setViewportView(textpane);
-
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 360, 70));
-
-        buscarrg.addTab("usuario", jPanel3);
+        eliminar.setEnabled(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -139,7 +85,7 @@ public class eliminacion extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 450));
 
-        buscarrg.addTab("dueño", jPanel1);
+        eliminar.addTab("dueño", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -164,37 +110,31 @@ public class eliminacion extends javax.swing.JFrame {
         });
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
 
+        jButton4.setText("regresar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 450));
 
-        buscarrg.addTab("tab3", jPanel2);
+        eliminar.addTab("mascota", jPanel2);
 
-        getContentPane().add(buscarrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, -1));
+        getContentPane().add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        buscarrg.setSelectedIndex(2);
+        eliminar.setSelectedIndex(1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtduiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtduiActionPerformed
 
     }//GEN-LAST:event_txtduiActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if(txtusuario.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "usuario no ingresado");
-            txtusuario.requestFocus();
-        }else{
-            this.buscarrg.setSelectedIndex(1);
-        }
-        
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 this.dispose();        // TODO add your handling code here:
@@ -216,6 +156,10 @@ this.dispose();        // TODO add your handling code here:
     private void txtduiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyPressed
          // TODO add your handling code here:
     }//GEN-LAST:event_txtduiKeyPressed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+eliminar.setSelectedIndex(0);          // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
  
     /**
      * @param args the command line arguments
@@ -256,27 +200,19 @@ this.dispose();        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane buscarrg;
+    private javax.swing.JTabbedPane eliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextPane textpane;
     private javax.swing.JTextField txtdui;
-    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

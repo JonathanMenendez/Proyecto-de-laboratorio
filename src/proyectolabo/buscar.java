@@ -15,9 +15,6 @@ public class buscar extends javax.swing.JFrame {
     public buscar() {
         initComponents();
         this.setLocationRelativeTo(null);
-        textpane.setText("Nota: Si no ha registrado con anterioridad no deberia\n"
-                + "estar en esta pestaña, primero debe registrar\n"
-                + " a su mascota,en ser ese el caso, debe presionar \"cancelar\".");
 
     }
 
@@ -31,15 +28,6 @@ public class buscar extends javax.swing.JFrame {
     private void initComponents() {
 
         buscarrg = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        txtusuario = new javax.swing.JTextField();
-        btnbuscar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        textpane = new javax.swing.JTextPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
@@ -70,6 +58,7 @@ public class buscar extends javax.swing.JFrame {
         txtpeso = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,47 +66,6 @@ public class buscar extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buscarrg.setEnabled(false);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarionewfondo.png"))); // NOI18N
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 50, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuariolog.png"))); // NOI18N
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 60, 50));
-        jPanel3.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 160, -1));
-
-        btnbuscar.setText("Buscar");
-        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbuscarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
-
-        jButton5.setText("cancelar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
-        jPanel3.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 170, -1));
-
-        jScrollPane2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        textpane.setBackground(new java.awt.Color(204, 204, 255));
-        textpane.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        textpane.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        textpane.setEnabled(false);
-        jScrollPane2.setViewportView(textpane);
-
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 360, 70));
-
-        buscarrg.addTab("usuario", jPanel3);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -196,27 +144,27 @@ public class buscar extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
         jPanel2.add(txtmascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Tipo de animal:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         cbxanimal.setBackground(new java.awt.Color(0, 153, 153));
         cbxanimal.setForeground(new java.awt.Color(255, 255, 255));
-        cbxanimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perro", "Gato", "Hamster", "Ave", "Conejo", "Reptil" }));
+        cbxanimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione animal", "Perro", "Gato", "Hamster", "Ave", "Conejo", "Reptil" }));
         cbxanimal.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         cbxanimal.setEditor(null);
         cbxanimal.setFocusCycleRoot(true);
-        jPanel2.add(cbxanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 110, -1));
+        jPanel2.add(cbxanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 94, 110, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Raza");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
-        jPanel2.add(txtraza, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 110, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        jPanel2.add(txtraza, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 110, -1));
 
         btnguardar.setText("Guardar cambios");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +172,7 @@ public class buscar extends javax.swing.JFrame {
                 btnguardarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
+        jPanel2.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
 
         btncacelar.setText("Cancelar");
         btncacelar.addActionListener(new java.awt.event.ActionListener() {
@@ -237,31 +185,39 @@ public class buscar extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Tamaño:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
-        jPanel2.add(txttamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 110, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        jPanel2.add(txttamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 110, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Edad:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
-        jPanel2.add(txtedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jPanel2.add(txtedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 110, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Peso:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
-        jPanel2.add(txtpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 110, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        jPanel2.add(txtpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Sexo");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         jComboBox3.setBackground(new java.awt.Color(0, 153, 153));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "hembra", "varon" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione sexo", "hembra", "varon" }));
+        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 126, 110, 20));
+
+        jButton2.setText("Regresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -273,25 +229,56 @@ public class buscar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombreActionPerformed
+    private void btncacelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncacelarActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btncacelarActionPerformed
 
-    private void txtapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtapellidoActionPerformed
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+        if (txtnombre.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
+            txtnombre.requestFocus();
+        } else if (txtapellido.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
+            txtapellido.requestFocus();
+        } else if (txtdui.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
+            txtdui.requestFocus();
+        } else if (txtmascota.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
+            txtmascota.requestFocus();
+        } else if (txtraza.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Raza de la mascota no hacido ingresado");
+            txtraza.requestFocus();
+        } else if (txttamaño.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Tamaño de la mascota no hacido ingresado");
+            txttamaño.requestFocus();
+        } else if (txtpeso.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Peso de la mascota no hacido ingresado");
+            txtpeso.requestFocus();
+        } else {
+            JOptionPane.showMessageDialog(null, "guardado con exito");
+        }
+    }//GEN-LAST:event_btnguardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        buscarrg.setSelectedIndex(1);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtduiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtduiActionPerformed
 
     }//GEN-LAST:event_txtduiActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        buscarrg.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void txtapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtapellidoActionPerformed
 
-    private void btncacelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncacelarActionPerformed
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_btncacelarActionPerformed
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombreActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+buscarrg.setSelectedIndex(0);          // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
 
@@ -425,48 +412,6 @@ public class buscar extends javax.swing.JFrame {
         }
     }
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        if(txtusuario.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "usuario no ingresado");
-            txtusuario.requestFocus();
-        }else{
-            this.buscarrg.setEnabled(true);
-        this.buscarrg.setSelectedIndex(1);
-        }
-        
-    }//GEN-LAST:event_btnbuscarActionPerformed
-
-    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
- if (txtnombre.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
-            txtnombre.requestFocus();
-        } else if (txtapellido.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
-            txtapellido.requestFocus();
-        } else if (txtdui.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
-            txtdui.requestFocus();
-        } else if (txtmascota.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
-            txtmascota.requestFocus();
-        } else if (txtraza.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Raza de la mascota no hacido ingresado");
-            txtraza.requestFocus();
-        } else if (txttamaño.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Tamaño de la mascota no hacido ingresado");
-            txttamaño.requestFocus();
-        } else if (txtpeso.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Peso de la mascota no hacido ingresado");
-            txtpeso.requestFocus();
-        } else {
-            JOptionPane.showMessageDialog(null, "guardado con exito");
-        }      
-    }//GEN-LAST:event_btnguardarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -504,7 +449,6 @@ public class buscar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btncacelar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JTabbedPane buscarrg;
@@ -512,12 +456,10 @@ public class buscar extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxsexop;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -532,10 +474,6 @@ public class buscar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextPane textpane;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtdui;
     private javax.swing.JTextField txtedad;
@@ -544,6 +482,5 @@ public class buscar extends javax.swing.JFrame {
     private javax.swing.JTextField txtpeso;
     private javax.swing.JTextField txtraza;
     private javax.swing.JTextField txttamaño;
-    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

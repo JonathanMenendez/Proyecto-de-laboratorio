@@ -94,8 +94,8 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-      logearse log=new logearse();
-       log.show();
+        dueño registro=new dueño();
+        registro.setVisible(true);
     }//GEN-LAST:event_registrarActionPerformed
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed

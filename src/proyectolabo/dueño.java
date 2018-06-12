@@ -63,11 +63,14 @@ public class dueño extends javax.swing.JFrame {
         txtpeso = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        registro.setEnabled(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -171,7 +174,7 @@ public class dueño extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         txtmascota.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtmascota.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -182,12 +185,12 @@ public class dueño extends javax.swing.JFrame {
                 txtmascotaKeyTyped(evt);
             }
         });
-        jPanel2.add(txtmascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, -1));
+        jPanel2.add(txtmascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 140, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Tipo de animal:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         cbxanimal.setBackground(new java.awt.Color(0, 153, 153));
         cbxanimal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -196,12 +199,12 @@ public class dueño extends javax.swing.JFrame {
         cbxanimal.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         cbxanimal.setEditor(null);
         cbxanimal.setFocusCycleRoot(true);
-        jPanel2.add(cbxanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 130, -1));
+        jPanel2.add(cbxanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 140, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Raza:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         txtraza.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtraza.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -212,7 +215,7 @@ public class dueño extends javax.swing.JFrame {
                 txtrazaKeyTyped(evt);
             }
         });
-        jPanel2.add(txtraza, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 110, -1));
+        jPanel2.add(txtraza, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 140, -1));
 
         btnguardar.setText("Guardar");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
@@ -233,17 +236,17 @@ public class dueño extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("tamaño");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Edad:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Peso:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         txttamaño.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txttamaño.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -254,7 +257,7 @@ public class dueño extends javax.swing.JFrame {
                 txttamañoKeyTyped(evt);
             }
         });
-        jPanel2.add(txttamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 110, -1));
+        jPanel2.add(txttamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 140, -1));
 
         txtedad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -265,7 +268,7 @@ public class dueño extends javax.swing.JFrame {
                 txtedadKeyTyped(evt);
             }
         });
-        jPanel2.add(txtedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
+        jPanel2.add(txtedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 140, -1));
 
         txtpeso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtpeso.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -273,18 +276,26 @@ public class dueño extends javax.swing.JFrame {
                 txtpesoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 110, -1));
+        jPanel2.add(txtpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 140, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Sexo:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         jComboBox3.setBackground(new java.awt.Color(0, 153, 153));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione sexo", "hembra", "varon" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, -1));
+        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+
+        jButton2.setText("Regresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -474,6 +485,10 @@ public class dueño extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtedadKeyPressed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+registro.setSelectedIndex(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,6 +531,7 @@ public class dueño extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxsexop;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
