@@ -116,6 +116,14 @@ public class buscar extends javax.swing.JFrame {
                 txtnombreActionPerformed(evt);
             }
         });
+        txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtnombreKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 85, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -128,6 +136,14 @@ public class buscar extends javax.swing.JFrame {
                 txtapellidoActionPerformed(evt);
             }
         });
+        txtapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtapellidoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 85, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -138,6 +154,14 @@ public class buscar extends javax.swing.JFrame {
         txtdui.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtduiActionPerformed(evt);
+            }
+        });
+        txtdui.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtduiKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtduiKeyTyped(evt);
             }
         });
         jPanel1.add(txtdui, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 85, -1));
@@ -179,6 +203,12 @@ public class buscar extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre:");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        txtmascota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtmascotaKeyPressed(evt);
+            }
+        });
         jPanel2.add(txtmascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -190,6 +220,15 @@ public class buscar extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Raza");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+
+        txtraza.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtrazaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtrazaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtraza, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 110, -1));
 
         btncacelar.setText("Cancelar");
@@ -204,18 +243,45 @@ public class buscar extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Tamaño:");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        txttamaño.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txttamañoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txttamañoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txttamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 110, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Edad:");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
+        txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtedadKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtedadKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 110, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Peso:");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+
+        txtpeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpesoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtpesoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -232,9 +298,25 @@ public class buscar extends javax.swing.JFrame {
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
 
         txtsex.setText(" ");
+        txtsex.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtsexKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsexKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtsex, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 110, -1));
 
         txttipo.setText(" ");
+        txttipo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txttipoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txttipoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txttipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 110, -1));
 
         jLabel11.setText("ID_Mascota");
@@ -260,7 +342,20 @@ public class buscar extends javax.swing.JFrame {
     }//GEN-LAST:event_btncacelarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-buscarrg.setSelectedIndex(1);      
+ 
+        if (txtnombre.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
+                txtnombre.requestFocus();
+            } else if (txtapellido.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
+                txtapellido.requestFocus();
+            } else if (txtdui.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
+                txtdui.requestFocus();
+                } else{
+                 buscarrg.setSelectedIndex(1);
+            }
+             
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtduiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtduiActionPerformed
@@ -280,58 +375,146 @@ buscarrg.setSelectedIndex(1);
          buscarrg.setSelectedIndex(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
-
-    private void txttamañoKeyTyped(java.awt.event.KeyEvent evt) {
+    private void txtnombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyPressed
         // TODO add your handling code here:
-      
-    }
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtapellido.requestFocus();
+        }
+    }//GEN-LAST:event_txtnombreKeyPressed
 
-    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {
+    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
         // TODO add your handling code here:
-       
-    }
-
-    private void txtpesoKeyTyped(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-       
-    }
-
-    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-      
-    }
-
-    private void txtapellidoKeyTyped(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-        /*char dato = evt.getKeyChar();
+        char dato = evt.getKeyChar();
         String cadena = "" + dato;
         if (!Character.isLetter(dato)) {
             evt.consume();
-        }*/
-    }
+        }
+    }//GEN-LAST:event_txtnombreKeyTyped
 
-    private void txtmascotaKeyTyped(java.awt.event.KeyEvent evt) {
+    private void txtapellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidoKeyPressed
         // TODO add your handling code here:
-        /*char dato = evt.getKeyChar();
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+           txtdui.requestFocus();
+        }
+    }//GEN-LAST:event_txtapellidoKeyPressed
+
+    private void txtapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidoKeyTyped
+        // TODO add your handling code here:
+        char dato = evt.getKeyChar();
         String cadena = "" + dato;
         if (!Character.isLetter(dato)) {
             evt.consume();
-        }*/
-    }
+        }
+    }//GEN-LAST:event_txtapellidoKeyTyped
 
-    private void txtrazaKeyTyped(java.awt.event.KeyEvent evt) {
+    private void txtduiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyPressed
         // TODO add your handling code here:
-       /* char dato = evt.getKeyChar();
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtsexo.requestFocus();
+        }
+    }//GEN-LAST:event_txtduiKeyPressed
+
+    private void txtmascotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmascotaKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txttipo.requestFocus();
+        }
+    }//GEN-LAST:event_txtmascotaKeyPressed
+
+    private void txttipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttipoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttipoKeyPressed
+
+    private void txttipoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttipoKeyTyped
+        // TODO add your handling code here:
+        char dato = evt.getKeyChar();
         String cadena = "" + dato;
         if (!Character.isLetter(dato)) {
             evt.consume();
-        }*/
-    }
+        }
+    }//GEN-LAST:event_txttipoKeyTyped
 
-    private void txtduiKeyTyped(java.awt.event.KeyEvent evt) {
+    private void txtsexKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsexKeyPressed
         // TODO add your handling code here:
-    /*    int limite = 8;
+    }//GEN-LAST:event_txtsexKeyPressed
+
+    private void txtsexKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsexKeyTyped
+        // TODO add your handling code here:
+        char dato = evt.getKeyChar();
+        String cadena = "" + dato;
+        if (!Character.isLetter(dato)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtsexKeyTyped
+
+    private void txtrazaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtrazaKeyPressed
+        // TODO add your handling code here:
+         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txttamaño.requestFocus();
+        }
+    }//GEN-LAST:event_txtrazaKeyPressed
+
+    private void txtrazaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtrazaKeyTyped
+        // TODO add your handling code here:
+        char dato = evt.getKeyChar();
+        String cadena = "" + dato;
+        if (!Character.isLetter(dato)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtrazaKeyTyped
+
+    private void txttamañoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttamañoKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtedad.requestFocus();
+        }
+    }//GEN-LAST:event_txttamañoKeyPressed
+
+    private void txttamañoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttamañoKeyTyped
+        // TODO add your handling code here:
+        char letra = evt.getKeyChar();
+        if (!Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '.') {
+            evt.consume();
+        }
+        if (evt.getKeyChar() == '.' && txttamaño.getText().contains(".")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txttamañoKeyTyped
+
+    private void txtedadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyPressed
+        // TODO add your handling code here:
+          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtpeso.requestFocus();
+        }
+    }//GEN-LAST:event_txtedadKeyPressed
+
+    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyTyped
+        // TODO add your handling code here:
+        char dato = evt.getKeyChar();
+        String cadena = "" + dato;
+        if (!cadena.matches("[0-9]")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtedadKeyTyped
+
+    private void txtpesoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpesoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpesoKeyPressed
+
+    private void txtpesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpesoKeyTyped
+        // TODO add your handling code here:
+        char letra = evt.getKeyChar();
+        if (!Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '.') {
+            evt.consume();
+        }
+        if (evt.getKeyChar() == '.' && txttamaño.getText().contains(".")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtpesoKeyTyped
+
+    private void txtduiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyTyped
+        // TODO add your handling code here:
+         int limite = 8;
         if (txtdui.getText().length() > limite) {
             evt.consume();
         }
@@ -339,58 +522,8 @@ buscarrg.setSelectedIndex(1);
         String cadena = "" + dato;
         if (!cadena.matches("[0-9]")) {
             evt.consume();
-        }*/
-    }
-
-    private void txtnombreKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-        //if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-        //    txtapellido.requestFocus();
-        //}
-    }
-
-    private void txtapellidoKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-        //if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-        //8    txtdui.requestFocus();
-      //  }
-    }
-
-    private void txtduiKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-      //  if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-      //      cbxsexo.requestFocus();
-       // }
-    }
-
-    private void txtmascotaKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-       // if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-        //    cbxanimal.requestFocus();
-       // }
-
-    }
-
-    private void txtrazaKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-       // if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-        //    txttamaño.requestFocus();
-       // }
-    }
-
-    private void txttamañoKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-       // if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-       //     txtedad.requestFocus();
-       // }
-    }
-
-    private void txtedadKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
-      //  if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-       //     txtpeso.requestFocus();
-       // }
-    }
+        }
+    }//GEN-LAST:event_txtduiKeyTyped
 
     /**
      * @param args the command line arguments

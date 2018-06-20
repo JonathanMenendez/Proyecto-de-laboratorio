@@ -398,16 +398,6 @@ public class dueño extends javax.swing.JFrame {
     }//GEN-LAST:event_txtduiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        registro.setSelectedIndex(1);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_btncancelarActionPerformed
-
-    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
-
-        // TODO add your handling code here:
         if (txtnombre.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
                 txtnombre.requestFocus();
@@ -417,7 +407,21 @@ public class dueño extends javax.swing.JFrame {
             } else if (txtdui.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
                 txtdui.requestFocus();
-            } else if (txtmascota.getText().equals("")) {
+                } else{
+                 registro.setSelectedIndex(1);
+            }
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btncancelarActionPerformed
+
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+
+        // TODO add your handling code here:
+        
+            if (txtmascota.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
                 txtmascota.requestFocus();
             } else if (txtraza.getText().equals("")) {
