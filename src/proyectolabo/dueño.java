@@ -6,6 +6,9 @@
 package proyectolabo;
 
 import java.awt.event.KeyEvent;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +24,76 @@ public class dueño extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
 
+    }
+
+    //guarda los dato del dueño
+    public void datosDueño() {
+        conectar cc = new conectar();
+        Connection cn = cc.getConnection();
+        String nombre, apellido, sexo = "", dui;
+        String mysql = "";
+        nombre = txtnombre.getText();
+        apellido = txtapellido.getText();
+        dui = txtdui.getText();
+      
+        //ver que sexo selecciona  
+          sexo=String.valueOf(cbxsexo.getSelectedItem());
+        
+        mysql = "INSERT INTO dueño (nombre,apellido,dui,sexo) VALUES (?,?,?,?)";
+
+        try {
+            PreparedStatement Pst = cn.prepareStatement(mysql);
+            Pst.setString(1, nombre);
+            Pst.setString(2, apellido);
+            Pst.setString(3, dui);
+            Pst.setString(4, sexo);
+
+            int n = Pst.executeUpdate();
+            if (n > 0) {
+                JOptionPane.showMessageDialog(null, "DATOS DEL DUEÑO guardado con exito");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(dueño.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "ay regada no guarda los dato");
+        }
+
+        //datos de la masocota
+        String nom, tipo = "", sex = "", raza = "";
+        String peso = "", tamaño = "", edad = "";
+        String sql = "";
+        raza = txtraza.getText();
+        peso = txtpeso.getText();
+        tamaño = txttamaño.getText();
+        edad = txtedad.getText();
+        nom = txtmascota.getText();
+        dui = txtdui.getText();
+        tipo=String.valueOf(cbxanimal.getSelectedItem());
+        // mira que tipo de animal ha selecciondo
+        sex=String.valueOf(cbxexoo.getSelectedItem());
+        //apellido=txtapellido.getText();
+        sql = "INSERT INTO animal (nomascota,edad,tamaño,peso,sexo,tipoanimal,Dui,raza) VALUES (?,?,?,?,?,?,?,?)";
+
+        try {
+            PreparedStatement Pst = cn.prepareStatement(sql);
+            Pst.setString(1, nom);
+            Pst.setString(2, edad);
+            Pst.setString(3, tamaño);
+            Pst.setString(4, peso);
+            Pst.setString(5, sex);
+            Pst.setString(6, tipo);
+            Pst.setString(7, dui);
+            Pst.setString(8, raza);
+            int n = Pst.executeUpdate();
+            if (n > 0) {
+                //JOptionPane.showMessageDialog(null, "guardado con exito los DATOS DEL animal");
+                menuopciones men = new menuopciones ();
+                men.show();
+                this.dispose();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(dueño.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "ay regada no guarda los datodel animal");
+        }
     }
 
     /**
@@ -43,7 +116,7 @@ public class dueño extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        cbxsexop = new javax.swing.JComboBox<>();
+        cbxsexo = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -62,7 +135,7 @@ public class dueño extends javax.swing.JFrame {
         txtedad = new javax.swing.JTextField();
         txtpeso = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbxexoo = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
@@ -154,10 +227,15 @@ public class dueño extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 60, 60));
 
-        cbxsexop.setBackground(new java.awt.Color(0, 102, 102));
-        cbxsexop.setForeground(new java.awt.Color(255, 255, 255));
-        cbxsexop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione genero", "Masculino", "Femenio" }));
-        jPanel1.add(cbxsexop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+        cbxsexo.setBackground(new java.awt.Color(0, 102, 102));
+        cbxsexo.setForeground(new java.awt.Color(255, 255, 255));
+        cbxsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione genero", "Masculino", "Femenio" }));
+        cbxsexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxsexoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbxsexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 450));
@@ -283,11 +361,11 @@ public class dueño extends javax.swing.JFrame {
         jLabel14.setText("Sexo:");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jComboBox3.setBackground(new java.awt.Color(0, 153, 153));
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione sexo", "hembra", "varon" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+        cbxexoo.setBackground(new java.awt.Color(0, 153, 153));
+        cbxexoo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cbxexoo.setForeground(new java.awt.Color(255, 255, 255));
+        cbxexoo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccione sexo", "hembra", "varon" }));
+        jPanel2.add(cbxexoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -328,31 +406,40 @@ public class dueño extends javax.swing.JFrame {
     }//GEN-LAST:event_btncancelarActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+
         // TODO add your handling code here:
         if (txtnombre.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
-            txtnombre.requestFocus();
-        } else if (txtapellido.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
-            txtapellido.requestFocus();
-        } else if (txtdui.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
-            txtdui.requestFocus();
-        } else if (txtmascota.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
-            txtmascota.requestFocus();
-        } else if (txtraza.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Raza de la mascota no hacido ingresado");
-            txtraza.requestFocus();
-        } else if (txttamaño.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Tamaño de la mascota no hacido ingresado");
-            txttamaño.requestFocus();
-        } else if (txtpeso.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Peso de la mascota no hacido ingresado");
-            txtpeso.requestFocus();
-        } else {
-            JOptionPane.showMessageDialog(null, "guardado con exito");
-        }
+                JOptionPane.showMessageDialog(null, "Nombre del propietario no hacido ingresado");
+                txtnombre.requestFocus();
+            } else if (txtapellido.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Apellido del propietario no hacido ingresado");
+                txtapellido.requestFocus();
+            } else if (txtdui.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Documento de identificacion del propietario no hacido ingresado");
+                txtdui.requestFocus();
+            } else if (txtmascota.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nombre de la mascota no hacido ingresado");
+                txtmascota.requestFocus();
+            } else if (txtraza.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Raza de la mascota no hacido ingresado");
+                txtraza.requestFocus();
+            } else if (txttamaño.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Tamaño de la mascota no hacido ingresado");
+                txttamaño.requestFocus();
+            } else if (txtpeso.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Peso de la mascota no hacido ingresado");
+                txtpeso.requestFocus();
+            } else {
+               // JOptionPane.showMessageDialog(null, );
+                
+               //ESTE METODO ES EL QUE LLAMA LA CONEXION Y GUARDA LOS DATOS ESTA AL PRICIPIO DE ESTA CLASE
+        
+                  datosDueño(); 
+                
+            }  
+        
+
+
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void txttamañoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttamañoKeyTyped
@@ -436,58 +523,62 @@ public class dueño extends javax.swing.JFrame {
     }//GEN-LAST:event_txtduiKeyTyped
 
     private void txtnombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                txtapellido.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtapellido.requestFocus();
         }
     }//GEN-LAST:event_txtnombreKeyPressed
 
     private void txtapellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidoKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                txtdui.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtdui.requestFocus();
         }
     }//GEN-LAST:event_txtapellidoKeyPressed
 
     private void txtduiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                cbxsexop.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cbxsexo.requestFocus();
         }
     }//GEN-LAST:event_txtduiKeyPressed
 
     private void txtmascotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmascotaKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                cbxanimal.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cbxanimal.requestFocus();
         }
-         
+
     }//GEN-LAST:event_txtmascotaKeyPressed
 
     private void txtrazaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtrazaKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                txttamaño.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txttamaño.requestFocus();
         }
     }//GEN-LAST:event_txtrazaKeyPressed
 
     private void txttamañoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttamañoKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                txtedad.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtedad.requestFocus();
         }
     }//GEN-LAST:event_txttamañoKeyPressed
 
     private void txtedadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyPressed
-         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                txtpeso.requestFocus();
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtpeso.requestFocus();
         }
     }//GEN-LAST:event_txtedadKeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-registro.setSelectedIndex(0);        // TODO add your handling code here:
+        registro.setSelectedIndex(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void cbxsexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxsexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxsexoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -528,11 +619,11 @@ registro.setSelectedIndex(0);        // TODO add your handling code here:
     private javax.swing.JButton btncancelar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JComboBox<String> cbxanimal;
-    private javax.swing.JComboBox<String> cbxsexop;
+    private javax.swing.JComboBox<String> cbxexoo;
+    private javax.swing.JComboBox<String> cbxsexo;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

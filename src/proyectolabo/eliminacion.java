@@ -1,6 +1,14 @@
 
 package proyectolabo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,7 +24,8 @@ public class eliminacion extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);       
     }
-
+    String id1="";
+    String duii="";
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,10 +44,10 @@ public class eliminacion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        txtnombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,11 +103,13 @@ public class eliminacion extends javax.swing.JFrame {
         jLabel1.setText("Mascotas");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 90, -1));
-
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Eliminar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 100, -1));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -118,6 +129,9 @@ public class eliminacion extends javax.swing.JFrame {
         });
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
+        txtnombre.setText(" ");
+        jPanel2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 90, 30));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dueñonew.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 450));
 
@@ -129,20 +143,89 @@ public class eliminacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        eliminar.setSelectedIndex(1);
+        String nom,tipo,edad,tamaño,peso,sexo,Dui,raza,id;
+     String mysql = "SELECT * FROM animal WHERE Dui="+txtdui.getText();
+          conectar cc = new conectar();
+         Connection cn = cc.getConnection();
+          //String nombre, apellido,dui,sexo;
+        
+          
+         
+              
+      try {
+           Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(mysql);
+            
+          while(rs.next()){
+        nom=rs.getString("nomascota");
+       tipo=rs.getString("tipoanimal");
+       edad=rs.getString("edad");
+       tamaño=rs.getString("tamaño");
+       peso=rs.getString("peso");
+       sexo=rs.getString("sexo");
+       Dui=rs.getString("Dui");
+       raza=rs.getString("raza");
+       id=rs.getString("idmascota");
+       id1=id;
+       duii=Dui;
+       //JOptionPane.showMessageDialog(null,"");
+      txtnombre.setText(nom);
+      eliminar.setSelectedIndex(1); 
+          
+             }  
+      } catch (SQLException ex) {
+          Logger.getLogger(ProyectoLabo.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(null, "error al ingresar los datos del animal");
+      }
+      
+      //datos del dueño
+      
+      String sql = "SELECT * FROM dueño WHERE dui="+duii;
+         // conectar cc = new conectar();
+          //Connection cn = cc.getConnection();
+          String nombre, apellido,dui,sexoo;
+        
+          
+         
+              
+      try {
+           Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+          while(rs.next()){
+        nombre=rs.getString("nombre");
+       apellido=rs.getString("apellido");
+       dui=rs.getString("dui");
+       sexoo=rs.getString("sexo");
+       //JOptionPane.showMessageDialog(null,nombre+apellido+dui+sexo);
+      
+       
+          
+             }  
+      } catch (SQLException ex) {
+          Logger.getLogger(ProyectoLabo.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(null, "ierror al ingresar los datos de la persona");
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtduiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtduiActionPerformed
-
+if(txtdui.equals("")){
+    JOptionPane.showMessageDialog(null,"el campo no debe estar vacio");
+}else{
+    
+}
     }//GEN-LAST:event_txtduiActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-this.dispose();        // TODO add your handling code here:
+menuopciones me = new menuopciones();
+me.show();
+this.dispose(); 
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txtduiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtduiKeyTyped
         // TODO add your handling code here:
-        int limite = 8;
+        int limite = 9;
         if (txtdui.getText().length() > limite) {
             evt.consume();
         }
@@ -160,6 +243,33 @@ this.dispose();        // TODO add your handling code here:
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 eliminar.setSelectedIndex(0);          // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // borrar la mascota 
+         String sql = "DELETE FROM animal WHERE idmascota="+id1;
+          conectar cc = new conectar();
+          Connection cn = cc.getConnection();
+    try {
+         PreparedStatement pst =  cn.prepareStatement(sql);
+          pst.execute();
+        JOptionPane.showMessageDialog(null, "se booro con exito el que nose");
+      } catch (SQLException ex) {
+          Logger.getLogger(ProyectoLabo.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(null, "fallo al borrar");
+      }
+    String mysql = "DELETE FROM dueño WHERE dui="+duii;
+         // conectar cc = new conectar();
+          //Connection cn = cc.getConnection();
+    try {
+         PreparedStatement pst =  cn.prepareStatement(mysql);
+          pst.execute();
+        JOptionPane.showMessageDialog(null, "se borro con exito el dueño no pago :)");
+      } catch (SQLException ex) {
+          Logger.getLogger(ProyectoLabo.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(null, "fallo al borrar");
+      }
+    
+    }//GEN-LAST:event_jButton2ActionPerformed
  
     /**
      * @param args the command line arguments
@@ -205,7 +315,6 @@ eliminar.setSelectedIndex(0);          // TODO add your handling code here:
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -214,5 +323,6 @@ eliminar.setSelectedIndex(0);          // TODO add your handling code here:
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtdui;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

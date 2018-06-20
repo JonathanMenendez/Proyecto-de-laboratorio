@@ -7,9 +7,29 @@ public class logearse extends javax.swing.JFrame {
     /**
      * Creates new form logearse
      */
-    public logearse() {
+   public logearse() {
         initComponents();
         this.setLocationRelativeTo(null);
+      
+    }
+ 
+    public void login (String user, String pass, String usuario, String passwor){
+      
+     String use=user;
+     String paa=pass;
+    if( usuario == null ? use == null : usuario.equals(use) && passwor == null ? paa == null : passwor.equals(paa) ){
+        menuopciones nuevomenu=new menuopciones();
+         this.dispose();
+         this.dispose();
+        nuevomenu.setVisible(true);
+       
+        
+    }
+      else{
+        JOptionPane.showMessageDialog(null,"usuario o contraseña incorrecta");
+        this.show();
+    }
+          
     }
 
     /**
@@ -25,10 +45,10 @@ public class logearse extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtusuario = new javax.swing.JTextField();
         btnregistrar = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
+        txtusuar = new javax.swing.JTextField();
+        txtpassw = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,9 +66,6 @@ public class logearse extends javax.swing.JFrame {
         jLabel4.setText("INICIAR SESION ");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
 
-        txtusuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 290, 40));
-
         btnregistrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnregistrar.setText("Ingresar");
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +74,6 @@ public class logearse extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 100, 30));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 290, 40));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Salir");
@@ -68,6 +84,20 @@ public class logearse extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 90, 30));
 
+        txtusuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusuarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtusuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 90, -1));
+
+        txtpassw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpasswActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtpassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 100, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mascotasfondo.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 51, 255)));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
@@ -76,19 +106,35 @@ public class logearse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
-        if (txtusuario.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "usuario no ingresado");
-            txtusuario.requestFocus();
-        } else {
-            menuopciones nuevomenu=new menuopciones();
-            nuevomenu.setVisible(true);
-            this.dispose();
-        }
+      if (txtusuar.getText().equals("")||txtpassw.getText().equals("")) {
+          JOptionPane.showMessageDialog(null, "usuario o contraseña no ingresado");
+            txtusuar.requestFocus();
+        }else{
+           String use=txtusuar.getText();
+        String pa=txtpassw.getText();
+        ProyectoLabo la = new ProyectoLabo();
+        la.cargar(use,pa);
+        this.dispose();
+        
+        
+          
+      }
+        
+        
+       // po.cargar();
     }//GEN-LAST:event_btnregistrarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();        // TODO add your handling code here:
+     this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtusuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusuarActionPerformed
+
+    private void txtpasswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpasswActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,7 +179,7 @@ public class logearse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public static javax.swing.JPasswordField jPasswordField1;
-    public static javax.swing.JTextField txtusuario;
+    private javax.swing.JTextField txtpassw;
+    private javax.swing.JTextField txtusuar;
     // End of variables declaration//GEN-END:variables
 }

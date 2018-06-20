@@ -90,22 +90,28 @@ public class menuopciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-this.dispose();        // TODO add your handling code here:
+this.dispose();   
+conectar c = new conectar();
+c.desconectar();
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         dueño registro=new dueño();
         registro.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_registrarActionPerformed
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
-        buscar ver=new buscar();
+        buscarr ver=new buscarr();
         ver.show();
+        this.dispose();
     }//GEN-LAST:event_buscarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
     eliminacion deletenew=new eliminacion();   
     deletenew.show();// TODO add your handling code here:
+    this.dispose();
     }//GEN-LAST:event_eliminarActionPerformed
 
     /*
